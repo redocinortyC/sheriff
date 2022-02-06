@@ -17,6 +17,10 @@ for (const file of commandFiles) {
 client.once('ready', () => {
 	console.log(`Node.js version: ${process.version}`);
     console.log(`🤠 Yee-haw! Logged in as ${client.user.tag}`);
+
+	// Status and activities
+	client.user.setStatus('dnd');
+	client.user.setActivity('council meetings', { type: 'LISTENING' });
 });
 
 // Interactions
