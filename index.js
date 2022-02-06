@@ -40,3 +40,16 @@ client.on('interactionCreate', async interaction => {
 });
 
 client.login(token);
+
+// Express server for hosting
+const express = require('express')
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+  res.send('🤠 Sheriff is currently up and working!')
+})
+
+app.listen(port, () => {
+  console.log(`Server listening at http://localhost:${port}`)
+})
