@@ -15,7 +15,7 @@ module.exports = {
 		const member = interaction.options.getMember('user');
 
 		if (member && interaction.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR)) {
-			member.banned();
+			member.ban();
 			await interaction.reply(`:cowboy: ${member} has been banned.`);
 		} else {
 			await interaction.reply({ content: 'You don\'t have permission to ban someone!', ephemeral: true });
