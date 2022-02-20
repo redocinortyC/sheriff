@@ -14,11 +14,11 @@ module.exports = {
 
 		const member = interaction.options.getMember('user');
 
-		if (member && interaction.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR)) {
+		if (member && interaction.member.permissions.has(Permissions.FLAGS.KICK_MEMBERS)) {
 			member.kick();
 			await interaction.reply(`:cowboy: ${member} has been kicked.`);
 		} else {
-			await interaction.reply({ content: 'You don\'t have permission to kick someone!', ephemeral: true });
+			await interaction.reply({ content: ':space_invader: Oops! An error occured.', ephemeral: true });
 		}
 
 	},

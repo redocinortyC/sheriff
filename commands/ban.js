@@ -10,16 +10,16 @@ module.exports = {
 				.setDescription('User to be banned')
 				.setRequired(true)),
 				
-	async execute(interaction) {
+		async execute(interaction) {
 
-		const member = interaction.options.getMember('user');
-
-		if (member && interaction.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR)) {
-			member.ban();
-			await interaction.reply(`:cowboy: ${member} has been banned.`);
-		} else {
-			await interaction.reply({ content: 'You don\'t have permission to ban someone!', ephemeral: true });
-		}
-
-	},
+			const user = interaction.options.getUser('user');
+			
+			if (user && interaction.member.permissions.has(Permissions.FLAGS.BAN_MEMBERS)) {
+				interaction.guild.members.ban(user);
+				await interaction.reply(`:cowboy: ${user} has been banned.`);
+			} else {
+				await interaction.reply({ content: ':space_invader: Oops! An error occured.', ephemeral: true });
+			}
+			
+		},
 };

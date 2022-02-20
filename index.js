@@ -20,7 +20,7 @@ client.once('ready', () => {
 
 	// Status and activities
 	client.user.setStatus('dnd');
-	client.user.setActivity('council meetings', { type: 'LISTENING' });
+	client.user.setActivity('typing noises', { type: 'LISTENING' });
 });
 
 // Interactions
