@@ -5,21 +5,28 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('moderation')
 		.setDescription('The basic Discord moderator\'s kit.')
+
+        // Ban command
 		.addSubcommand(subcommand =>
             subcommand
                 .setName('ban')
                 .setDescription('Ban hammer activated and ready to bonk.')
                 .addUserOption(option => option.setName('user').setDescription('User to be banned').setRequired(true)))
+        
+        // Kick command
         .addSubcommand(subcommand =>
             subcommand
                 .setName('kick')
                 .setDescription('Boot someone out of the server.')
                 .addUserOption(option => option.setName('user').setDescription('User to be kicked').setRequired(true)))
+        
+        // Unban command
 		.addSubcommand(subcommand =>
             subcommand
                 .setName('unban')
                 .setDescription('You have been un-bonked by the hammer.')
                 .addUserOption(option => option.setName('id').setDescription('User ID to be unbanned').setRequired(true))), 
+        
 	async execute(interaction) {
         
         if (interaction.options.getSubcommand() === 'ban') {
