@@ -1,6 +1,7 @@
 const fs = require('fs');
 const { Client, Collection, Intents } = require('discord.js');
 const { token } = require('./config.json');
+const emojiCharacters = require('./utility/emojiCharacters.js');
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
