@@ -7,7 +7,7 @@
     "url": "git+https://github.com/Cytronicode/sheriff.git"
   },
   "author": "cytronicode",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Cytronicode/sheriff/issues"
   },
