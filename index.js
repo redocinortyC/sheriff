@@ -16,8 +16,11 @@ for (const file of commandFiles) {
 
 // On ready
 client.once('ready', () => {
-	console.log(`Node.js version: ${process.version}`);
-    console.log(`🤠 Yee-haw! Logged in as ${client.user.tag}`);
+	// Version info
+	console.log(`🚀	Node.js version: ${process.version}`);
+	console.log(`🚀	Discord.js version: ${require('discord.js').version}`);
+
+    console.log(`\n🤠	Yee-haw! Logged in as ${client.user.tag}`);
 
 	// Status and activities
 	client.user.setStatus('dnd');
@@ -36,7 +39,7 @@ client.on('interactionCreate', async interaction => {
 		await command.execute(interaction);
 	} catch (error) {
 		console.error(error);
-		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+		await interaction.reply({ content: `${emojiCharacters['!']} There was an error while executing this command!`, ephemeral: true });
 	}
 });
 

@@ -5,6 +5,7 @@ module.exports = {
 		.setName('utility')
 		.setDescription('Some useful commands.')
 
+        // Ping command
 		.addSubcommand(subcommand =>
             subcommand
             .setName('ping')
