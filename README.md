@@ -13,7 +13,7 @@
 ## About
 
 Sheriff is a multipurpose Discord bot that utilizes [Node.js](https://nodejs.org) and the
-[Discord API](https://discord.com/developers/docs/intro); it is the official Discord bot for the International Junior Honor Society. It is owned by [Peter (hey, that's me!)](mailto:novodoodle@gmail.com), but it is maintained by the whole IJHS community.
+[Discord API](https://discord.com/developers/docs/intro); it is the official Discord bot for the International Junior Honor Society. It is owned by [Peter (also known as Cytronicode)](mailto:novodoodle@gmail.com), but it is maintained by the whole IJHS community.
 
 - Multipurpose
 - Community maintained
