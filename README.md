@@ -1,7 +1,7 @@
 <div align="center">
   <br />
   <p>
-    <img src="/assets/sheriff.png" width="546" alt="Sheriff logo" />
+    <img src="/assets/sheriff.png" width="250" alt="Sheriff logo" />
   </p>
   <br />
   <p>
