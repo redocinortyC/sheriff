@@ -5,6 +5,10 @@ const emojiCharacters = require('./utility/emojiCharacters.js');
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
+// Activity
+const activityName = "the equity market";
+const activityType = "WATCHING";
+
 // Commands collection
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -24,7 +28,7 @@ client.once('ready', () => {
 
 	// Status and activities
 	client.user.setStatus('dnd');
-	client.user.setActivity('typing noises', { type: 'LISTENING' });
+	client.user.setActivity(activityName, { type: activityType });
 });
 
 // Interactions
