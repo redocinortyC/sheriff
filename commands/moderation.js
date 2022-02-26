@@ -34,9 +34,9 @@ module.exports = {
 			
 			if (user && interaction.member.permissions.has(Permissions.FLAGS.BAN_MEMBERS)) {
 				interaction.guild.members.ban(user);
-				await interaction.reply(`:cowboy: ${user} has been banned.`);
+				await interaction.reply(`:loudspeaker: ${user} has been banned.`);
 			} else {
-				await interaction.reply({ content: '👾 Oops! An error occured.', ephemeral: true });
+				await interaction.reply({ content: ':space_invader: Oops! An error occured.', ephemeral: true });
 			}
         } 
         
@@ -45,9 +45,9 @@ module.exports = {
 
             if (member && interaction.member.permissions.has(Permissions.FLAGS.KICK_MEMBERS)) {
                 member.kick();
-                await interaction.reply(`:cowboy: ${member} has been kicked.`);
+                await interaction.reply(`:loudspeaker: ${member} has been kicked.`);
             } else {
-                await interaction.reply({ content: '👾 Oops! An error occured.', ephemeral: true });
+                await interaction.reply({ content: ':space_invader: Oops! An error occured.', ephemeral: true });
             }
         }
 
@@ -57,9 +57,9 @@ module.exports = {
 
             if (interaction.member.permissions.has(Permissions.FLAGS.BAN_MEMBERS)) {
                 interaction.guild.members.unban(id);
-                await interaction.reply(`:cowboy: ${user} has been unbanned.`);
+                await interaction.reply(`:loudspeaker: ${user} has been unbanned.`);
             } else {
-                await interaction.reply({ content: '👾 Oops! An error occured.', ephemeral: true });
+                await interaction.reply({ content: ':space_invader: Oops! An error occured.', ephemeral: true });
             }
         } 
 

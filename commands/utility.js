@@ -15,7 +15,7 @@ module.exports = {
         
         if (interaction.options.getSubcommand() === 'ping') {
             const sent = await interaction.reply({ content: 'Pinging...', fetchReply: true });
-            interaction.editReply(`🏓 Pong! Roundtrip latency: ${sent.createdTimestamp - interaction.createdTimestamp}ms`);
+            interaction.editReply(`:ping_pong: Pong! Roundtrip latency: ${sent.createdTimestamp - interaction.createdTimestamp}ms`);
         }
         
 	},
