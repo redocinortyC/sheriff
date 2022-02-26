@@ -3,7 +3,10 @@ const { Client, Collection, Intents } = require('discord.js');
 const { token } = require('./config.json');
 const emojiCharacters = require('./utility/emojiCharacters.js');
 
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+// Discord client and its intents
+const client = new Client({
+	intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS],
+});
 
 // Activity
 const activityName = "the equity market";
