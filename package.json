@@ -2,6 +2,10 @@
   "name": "sheriff",
   "version": "1.0.0",
   "description": "The official IJHS Discord bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node deploy-commands.js && node ."
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Cytronicode/sheriff.git"
@@ -20,6 +24,7 @@
   },
   "devDependencies": {
     "eslint": "^8.8.0",
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "node": "^17.4.0"
   }
 }
