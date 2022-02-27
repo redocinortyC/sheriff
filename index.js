@@ -1,7 +1,10 @@
 const fs = require('fs');
 const { Client, Collection, Intents } = require('discord.js');
 const { token } = require('./config.json');
-const emojiCharacters = require('./utility/emojiCharacters.js');
+
+// Utilities
+const emojis = require('./utility/emojis.js');
+const host = require('./utility/server.js');
 
 // Discord client and its intents
 const client = new Client({
@@ -27,7 +30,10 @@ client.once('ready', () => {
 	console.log(`🚀	Node.js version: ${process.version}`);
 	console.log(`🚀	Discord.js version: ${require('discord.js').version}`);
 
-    console.log(`\n🤠	Yee-haw! Logged in as ${client.user.tag}`);
+	console.log(`\n🤠	Yee-haw! Logged in as ${client.user.tag}\n`);
+
+	// Hosting
+	host();
 
 	// Status and activities
 	client.user.setStatus('dnd');
@@ -46,7 +52,7 @@ client.on('interactionCreate', async interaction => {
 		await command.execute(interaction);
 	} catch (error) {
 		console.error(error);
-		await interaction.reply({ content: `${emojiCharacters['!']} There was an error while executing this command!`, ephemeral: true });
+		await interaction.reply({ content: `${emojis['!']} There was an error while executing this command!`, ephemeral: true });
 	}
 });
 

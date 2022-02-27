@@ -5,18 +5,18 @@ module.exports = {
 		.setName('utility')
 		.setDescription('Some useful commands.')
 
-        // Ping command
+		// Ping command
 		.addSubcommand(subcommand =>
-            subcommand
-            .setName('ping')
-            .setDescription('Replies with \'pong\' and your current latency!')),
-            
+			subcommand
+				.setName('ping')
+				.setDescription('Replies with \'pong\' and your current latency!')),
+
 	async execute(interaction) {
-        
-        if (interaction.options.getSubcommand() === 'ping') {
-            const sent = await interaction.reply({ content: 'Pinging...', fetchReply: true });
-            interaction.editReply(`:ping_pong: Pong! Roundtrip latency: ${sent.createdTimestamp - interaction.createdTimestamp}ms`);
-        }
-        
+
+		if (interaction.options.getSubcommand() === 'ping') {
+			const sent = await interaction.reply({ content: 'Pinging...', fetchReply: true });
+			interaction.editReply(`:ping_pong: Pong! Roundtrip latency: ${sent.createdTimestamp - interaction.createdTimestamp}ms`);
+		}
+
 	},
 };
