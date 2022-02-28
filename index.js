@@ -1,10 +1,13 @@
-const fs = require('fs');
+const fs = require('node:fs');
+const axios = require("axios");
+
 const { Client, Collection, Intents } = require('discord.js');
 const { token } = require('./config.json');
 
 // Utilities
 const emojis = require('./utility/emojis.js');
 const host = require('./utility/server.js');
+const cryptoAPICheck = require('./utility/crypto.js');
 
 // Discord client and its intents
 const client = new Client({
@@ -12,7 +15,7 @@ const client = new Client({
 });
 
 // Activity
-const activityName = "the equity market";
+const activityName = "the stock market";
 const activityType = "WATCHING";
 
 // Commands collection
@@ -29,11 +32,15 @@ client.once('ready', () => {
 	// Version info
 	console.log(`🚀	Node.js version: ${process.version}`);
 	console.log(`🚀	Discord.js version: ${require('discord.js').version}`);
+	console.log(`🚀	Axios version: ${require('axios').version}`);
 
 	console.log(`\n🤠	Yee-haw! Logged in as ${client.user.tag}\n`);
 
 	// Hosting
 	host();
+
+	// Crypto API check
+	cryptoAPICheck();
 
 	// Status and activities
 	client.user.setStatus('dnd');
