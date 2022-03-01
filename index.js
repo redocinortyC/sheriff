@@ -1,5 +1,4 @@
 const fs = require('node:fs');
-const axios = require("axios");
 
 const { Client, Collection, Intents } = require('discord.js');
 const { token } = require('./config.json');
@@ -32,7 +31,6 @@ client.once('ready', () => {
 	// Version info
 	console.log(`🚀	Node.js version: ${process.version}`);
 	console.log(`🚀	Discord.js version: ${require('discord.js').version}`);
-	console.log(`🚀	Axios version: ${require('axios').version}`);
 
 	console.log(`\n🤠	Yee-haw! Logged in as ${client.user.tag}\n`);
 

@@ -40,6 +40,7 @@ module.exports = {
 
 		if (interaction.options.getSubcommand() === 'cryptocurrency') {
 			const id = interaction.options.getString('cryptocurrency');
+			
 			let response = null;
 	
 			new Promise(async (resolve, reject) => {
@@ -54,7 +55,7 @@ module.exports = {
 			  if (response) {
 			    // Upon success
 			    const json = response.data;
-					await interaction.reply("```json\n" + JSON.stringify(json, null, ' ') + "```");
+					await interaction.reply("**Cryptocurrency data (" + id + ")**\n```json\n" + JSON.stringify(json, null, ' ') + "```\n*Data provided by the CoinGecko data market APIs.*");
 			    resolve(json);
 			  }
 			});
