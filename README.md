@@ -29,7 +29,7 @@ See [the features guide](https://github.com/cytronicode/sheriff/blob/main/featur
 $ git clone https://github.com/Cytronicode/sheriff.git
 ```
 
-Note that if you want to base your own bot off of this repository, you need to create your own `config.json` file with the bot's token, guild ID, and client ID.
+Note that if you want to base your own bot off of this repository, you need to rename the `config-example.json` file to `config.json` and add the guild ID and client ID. Additionally, note that **the bot token is an environment variable.**
 
 ## Contributing
 

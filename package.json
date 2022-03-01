@@ -1,10 +1,9 @@
 {
   "name": "sheriff",
   "version": "1.0.0",
-  "description": "The official IJHS Discord bot",
-  "main": "index.js",
+  "description": "Sheriff is the official Discord bot for the International Junior Honor Society, and maintained by the whole IJHS community",
   "scripts": {
-    "start": "node deploy-commands.js && node ."
+    "start": "node deploy-commands.js && node index.js"
   },
   "repository": {
     "type": "git",
