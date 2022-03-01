@@ -1,11 +1,13 @@
+// Imports
 const { SlashCommandBuilder } = require('@discordjs/builders');
 
+// Experimental commands module
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('experiments')
 		.setDescription('Fresh new commands we are testing out.')
 
-		// Ping command
+		// React command
 		.addSubcommand(subcommand =>
 			subcommand
 				.setName('react')

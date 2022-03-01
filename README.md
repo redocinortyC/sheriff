@@ -19,6 +19,8 @@ Sheriff is a multipurpose Discord bot that utilizes [Node.js](https://nodejs.org
 - Community maintained
 - 100% slash command-based
 
+See [the features guide](https://github.com/cytronicode/sheriff/blob/main/features.md) if you'd like to get a glimpse into what Sheriff is capable of!
+
 ## Cloning the repository onto your local system
 
 **Node.js 16.9.0 or newer is required.**

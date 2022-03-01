@@ -1,7 +1,9 @@
+// Imports
 const axios = require("axios");
 
 const { SlashCommandBuilder } = require('@discordjs/builders');
 
+// Utility commands module
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('utility')
@@ -55,7 +57,7 @@ module.exports = {
 			  if (response) {
 			    // Upon success
 			    const json = response.data;
-					await interaction.reply("**Cryptocurrency data (" + id + ")**\n```json\n" + JSON.stringify(json, null, ' ') + "```\n*Data provided by the CoinGecko data market APIs.*");
+					await interaction.reply("**Cryptocurrency data (" + id + ")**\n```json\n" + JSON.stringify(json, null, ' ') + "```\n*:lizard: Data provided by the CoinGecko data market APIs.*");
 			    resolve(json);
 			  }
 			});

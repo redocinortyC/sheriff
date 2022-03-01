@@ -1,7 +1,7 @@
 const axios = require('axios');
 
-// Checks API server status
-function cryptoAPICheck(){
+// Checks CoinGecko APIs server status
+function crypto(){
 	let response = null;
 	
 	new Promise(async (resolve, reject) => {
@@ -22,4 +22,4 @@ function cryptoAPICheck(){
 	});
 }
 
-module.exports = cryptoAPICheck;
+module.exports = crypto;

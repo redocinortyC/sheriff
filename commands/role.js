@@ -1,6 +1,8 @@
+// Imports
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { Permissions } = require('discord.js');
 
+// Role commands module
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('role')
@@ -12,15 +14,7 @@ module.exports = {
 				.setName('add')
 				.setDescription('Add another role to your growing profile.')
 				.addRoleOption(option => option.setName('role').setDescription('Role to be added').setRequired(true))
-				.addUserOption(option => option.setName('user').setDescription('User to be modified').setRequired(true)))
-
-		// Has role command
-		.addSubcommand(subcommand =>
-			subcommand
-				.setName('has')
-				.setDescription('Check if someone has a role.')
-				.addRoleOption(option => option.setName('role').setDescription('Role to be investigated').setRequired(true))
-				.addUserOption(option => option.setName('user').setDescription('User to be investigated').setRequired(true))),
+				.addUserOption(option => option.setName('user').setDescription('User to be modified').setRequired(true))),
 
 	async execute(interaction) {
 

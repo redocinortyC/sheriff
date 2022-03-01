@@ -1,3 +1,4 @@
+// Imports
 const fs = require('node:fs');
 
 const { Client, Collection, Intents } = require('discord.js');
@@ -5,8 +6,8 @@ const { token } = require('./config.json');
 
 // Utilities
 const emojis = require('./utility/emojis.js');
-const host = require('./utility/server.js');
-const cryptoAPICheck = require('./utility/crypto.js');
+const server = require('./utility/server.js');
+const crypto = require('./utility/crypto.js');
 
 // Discord client and its intents
 const client = new Client({
@@ -14,8 +15,8 @@ const client = new Client({
 });
 
 // Activity
-const activityName = "the stock market";
 const activityType = "WATCHING";
+const activityName = "the stock market";
 
 // Commands collection
 client.commands = new Collection();
@@ -34,11 +35,11 @@ client.once('ready', () => {
 
 	console.log(`\n🤠	Yee-haw! Logged in as ${client.user.tag}\n`);
 
-	// Hosting
-	host();
+	// Hosting w/ Express
+	server();
 
-	// Crypto API check
-	cryptoAPICheck();
+	// CoinGecko APIs
+	crypto();
 
 	// Status and activities
 	client.user.setStatus('dnd');
@@ -61,4 +62,5 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
+// Client login
 client.login(token);

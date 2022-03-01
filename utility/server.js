@@ -7,10 +7,11 @@ app.get('/', (req, res) => {
 	res.send('🚀 Sheriff is being hosted 24/7 @ Replit with Uptimerobot!')
 });
 
-function host() {
+// Starts Express server
+function server() {
 	app.listen(port, () => {
 		console.log(`🔥	Hosting server started and listening on port ${port}`);
 	});
 }
 
-module.exports = host;
+module.exports = server;

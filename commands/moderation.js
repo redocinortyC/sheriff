@@ -1,6 +1,8 @@
+// Imports
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { Permissions } = require('discord.js');
 
+// Moderation commands module
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('moderation')
