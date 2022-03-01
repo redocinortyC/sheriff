@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const axios = require("axios");
+require('dotenv').config();
 
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
