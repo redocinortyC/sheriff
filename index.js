@@ -1,8 +1,9 @@
 // Imports
 const fs = require('node:fs');
+require('dotenv').config();
 
 const { Client, Collection, Intents } = require('discord.js');
-const token = process.env['BOT_TOKEN'];
+const token = process.env.BOT_TOKEN;
 
 // Utilities
 const emojis = require('./utility/emojis.js');
