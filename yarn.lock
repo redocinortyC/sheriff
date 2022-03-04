@@ -788,12 +788,24 @@
   "resolved" "https://registry.npmjs.org/negotiator/-/negotiator-0.6.3.tgz"
   "version" "0.6.3"
 
+"node-bin-setup@^1.0.0":
+  "integrity" "sha512-pTeU6NgUrexiLNtd+AKwvg6cngHMvj5FZ5e2bbv2ogBSIc9yhkXSSaTScfSRZnwHIh5YFmYSYlemLWkiKD7rog=="
+  "resolved" "https://registry.npmjs.org/node-bin-setup/-/node-bin-setup-1.1.0.tgz"
+  "version" "1.1.0"
+
 "node-fetch@^2.6.1", "node-fetch@^2.6.5":
   "integrity" "sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ=="
   "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.7.tgz"
   "version" "2.6.7"
   dependencies:
     "whatwg-url" "^5.0.0"
+
+"node@^17.5.0":
+  "integrity" "sha512-phtmk98gFt4w7OYxOimYpkopZPlTV4Wv01hpwQxU4JoNCqN7tNtdhJDa/i7TH4DuJuN4QYeUH+C1/y0QD82Y5g=="
+  "resolved" "https://registry.npmjs.org/node/-/node-17.5.0.tgz"
+  "version" "17.5.0"
+  dependencies:
+    "node-bin-setup" "^1.0.0"
 
 "on-finished@~2.3.0":
   "integrity" "sha1-IPEzZIGwg811M3mSoWlxqi2QaUc="
