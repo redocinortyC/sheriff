@@ -1,7 +1,8 @@
+// Imports
 const fs = require('node:fs');
-const axios = require("axios");
 require('dotenv').config();
 
+// Discord.js setup
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const { clientId, guildId } = require('./config.json');
@@ -10,6 +11,7 @@ const token = process.env.BOT_TOKEN;
 const commands = [];
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
+// Logs commands
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
 	commands.push(command.data.toJSON());

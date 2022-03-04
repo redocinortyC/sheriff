@@ -34,21 +34,24 @@ module.exports = {
 			
 			let response = null;
 	
+			// eslint-disable-next-line no-async-promise-executor
 			new Promise(async (resolve, reject) => {
-			  try {
-			    response = await axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${id}&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true&include_last_updated_at=true`);
-			  } catch(ex) {
-			    response = null;
-			    // Error logging
-			    console.log(ex);
-			    reject(ex);
-			  }
-			  if (response) {
-			    // Upon success
-			    const json = response.data;
+				
+				try {
+					response = await axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${id}&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true&include_last_updated_at=true`);
+				} catch(ex) {
+					response = null;
+					// Error logging
+					console.log(ex);
+					reject(ex);
+				}
+				
+				if (response) {
+					// Upon success
+					const json = response.data;
 					await interaction.reply("**Cryptocurrency data (" + id + ")**\n```json\n" + JSON.stringify(json, null, ' ') + "```\n*:lizard: Data provided by the CoinGecko data market APIs.*");
-			    resolve(json);
-			  }
+					resolve(json);
+				}
 			});
 		}
 
