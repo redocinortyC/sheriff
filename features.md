@@ -12,4 +12,11 @@
 
 ### Utility commands
 - Ping
+
+### Fun commands
 - Cryptocurrency data
+
+### Info commands
+- About IJHS
+- About the SLC
+- About the committees

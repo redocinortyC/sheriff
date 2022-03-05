@@ -24,7 +24,7 @@ module.exports = {
 
 			if (!user.roles.cache.has(role) && interaction.member.permissions.has(Permissions.FLAGS.MANAGE_ROLES)) {
 				user.roles.add(role);
-				await interaction.reply(`${user} has been crowned a new role: ${role.name}.`);
+				await interaction.reply(`${user} has been crowned the ${role.name} role.`);
 			} else {
 				await interaction.reply({ content: ':space_invader: Oops! An error occured.', ephemeral: true });
 			}

@@ -1,6 +1,5 @@
 // Imports
 const axios = require("axios");
-
 const { SlashCommandBuilder } = require('@discordjs/builders');
 
 // Utility commands module
