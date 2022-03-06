@@ -25,6 +25,19 @@ module.exports = {
 						.addChoice('Polkadot', 'polkadot')
 						.addChoice('Polygon', 'matic-network')
 						.addChoice('Solana', 'solana'))),
+		.addSubcommand(subcommand =>
+			subcommand
+			.setName('jokes')
+			.setDescription('Spew out some humorous jokes')
+			.addStringOption(option =>
+				option.setName('type')
+					.setDescription('Types of jokes supported')
+					.setReuired(true)
+					.addChoice('Programming', 'programming')
+					.addChoice('Anime', 'anime')
+					.addChoice('Food','food')
+					.addChoice('Knock-knock','knock-knock')
+					.addChoice('General','general'))),
 
 	async execute(interaction) {
 
@@ -52,6 +65,27 @@ module.exports = {
 					resolve(json);
 				}
 			});
+		}
+		if (interaction.options.getSubcommand() === 'jokes'){
+			const id = interaction.options.getString('type');
+			let response = null;
+			// eslint-disable-next-line no-async-promise-executor
+			new Promise(async (resolve, reject) => {
+
+				try {
+					response = await axios.get(`https://jokes.deno.dev/${joke}`)
+				} catch(ex) {
+					// Error Log
+					console.log(ex)
+					reject(ex)
+				}
+
+				if (response) {
+					const json = response.data;
+					await interaction.reply(`${JSON.stringify(json)}`)
+					resolve(json)
+				}
+			})
 		}
 
 	},
