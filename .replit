@@ -1,1 +1,9 @@
 run = "npm start"
+entrypoint = "index.js"
+
+[packager]
+language = "nodejs"
+
+  [packager.features]
+  packageSearch = true
+  guessImports = false
