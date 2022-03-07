@@ -7,8 +7,7 @@ const token = process.env.BOT_TOKEN;
 
 // Utilities
 const emojis = require('./utility/emojis.js');
-const server = require('./utility/server.js');
-const crypto = require('./utility/crypto.js');
+const { server, crypto }  = require('./utility/backend.js');
 
 // Discord client and its intents
 const client = new Client({
@@ -36,10 +35,8 @@ client.once('ready', () => {
 
 	console.log(`\n🤠	Yee-haw! Logged in as ${client.user.tag}\n`);
 
-	// Hosting w/ Express
+	// Backend hosting and APIs
 	server();
-
-	// CoinGecko APIs
 	crypto();
 
 	// Status and activities
