@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/Cytronicode/sheriff#readme",
   "dependencies": {
-    "@discordjs/builders": "^0.12.0",
+    "@discordjs/builders": "^0.13.0",
     "@discordjs/rest": "^0.3.0",
     "axios": "^0.26.0",
     "discord-api-types": "^0.31.2",
