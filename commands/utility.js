@@ -1,23 +1,30 @@
 // Imports
-const { SlashCommandBuilder } = require('@discordjs/builders');
+const { SlashCommandBuilder } = require("@discordjs/builders");
 
 // Utility commands module
 module.exports = {
-	data: new SlashCommandBuilder()
-		.setName('utility')
-		.setDescription('Some useful commands.')
+  data: new SlashCommandBuilder()
+    .setName("utility")
+    .setDescription("Some useful commands.")
 
-		// Ping command
-		.addSubcommand(subcommand =>
-			subcommand
-				.setName('ping')
-				.setDescription('Replies with \'pong\' and your current latency!')),
+    // Ping command
+    .addSubcommand((subcommand) =>
+      subcommand
+        .setName("ping")
+        .setDescription("Replies with 'pong' and your current latency!")
+    ),
 
-	async execute(interaction) {
-
-		if (interaction.options.getSubcommand() === 'ping') {
-			const sent = await interaction.reply({ content: 'Pinging...', fetchReply: true });
-			interaction.editReply(`:ping_pong: Pong! Roundtrip latency: ${sent.createdTimestamp - interaction.createdTimestamp}ms`);
-		}
-	},
+  async execute(interaction) {
+    if (interaction.options.getSubcommand() === "ping") {
+      const sent = await interaction.reply({
+        content: "Pinging...",
+        fetchReply: true,
+      });
+      interaction.editReply(
+        `:ping_pong: Pong! Roundtrip latency: ${
+          sent.createdTimestamp - interaction.createdTimestamp
+        }ms`
+      );
+    }
+  },
 };

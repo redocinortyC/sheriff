@@ -1,5 +1,5 @@
 // Imports
-const axios = require("axios");
+const { get } = require("axios");
 const { SlashCommandBuilder } = require("@discordjs/builders");
 
 // Utility commands module
@@ -55,7 +55,7 @@ module.exports = {
       // eslint-disable-next-line no-async-promise-executor
       new Promise(async (resolve, reject) => {
         try {
-          response = await axios.get(
+          response = await get(
             `https://api.coingecko.com/api/v3/simple/price?ids=${id}&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true&include_last_updated_at=true`
           );
         } catch (ex) {
@@ -85,7 +85,7 @@ module.exports = {
       new Promise(async (resolve, reject) => {
         try {
           // Getting 0th element because API returns array
-          response = await axios.get(`https://jokes.deno.dev/type/${type}/1`);
+          response = await get(`https://jokes.deno.dev/type/${type}/1`);
         } catch (ex) {
           response = null;
           console.log(ex);
