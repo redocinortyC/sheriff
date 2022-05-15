@@ -45,6 +45,19 @@ module.exports = {
             .setDescription("User ID to be unbanned")
             .setRequired(true)
         )
+    )
+
+    // Warn command
+    .addSubcommand((subcommand) =>
+      subcommand
+        .setName("warn")
+        .setDescription("Warn someone.")
+        .addUserOption((option) =>
+          option
+            .setName("user")
+            .setDescription("User to be warned")
+            .setRequired(true)
+        )
     ),
 
   async execute(interaction) {
@@ -96,5 +109,34 @@ module.exports = {
         });
       }
     }
-  },
-};
+
+    if (interaction.options.getSubcommand() === "warn") {
+      const id = interaction.options.get("id")?.value;
+      const user = interaction.options.getUser("id");
+
+      // Warning users with roles
+      // warning1, warning2, warning3
+      // if user has warningn, remove warningn and add warningn+1
+      if (interaction.member.permissions.has(Permissions.FLAGS.MANAGE_ROLES)) {
+        if (user.roles.cache.some(role => role.name === "warning1")) {
+          user.roles.remove("warning1");
+          user.roles.add("warning2");
+          await interaction.reply(`:loudspeaker: ${user} has been warned the second time.`);
+        }
+        if (user.roles.cache.some(role => role.name === "warning2")) {
+          user.roles.remove("warning2");
+          user.roles.add("warning3");
+          await interaction.reply(`:loudspeaker: ${user} has been will be banned.`);
+          if (interaction.member.BAN_MEMBERS) {
+            user.ban();
+            await interaction.reply(`:loudspeaker: ${user} has been banned.`);
+          }
+          if (!(user.roles.cache.some(role => role.name.startsWith("warning")))) {
+            user.roles.add("warning1");
+            await interaction.reply(`:loudspeaker: ${user} has been warned the first time.`);
+          }
+        }
+      }
+    }
+  }
+}
