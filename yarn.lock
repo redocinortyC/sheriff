@@ -922,10 +922,10 @@ node-fetch@^2.6.1, node-fetch@^2.6.7:
   dependencies:
     whatwg-url "^5.0.0"
 
-node@^17.7.2:
-  version "17.7.2"
-  resolved "https://registry.yarnpkg.com/node/-/node-17.7.2.tgz#855d617466fefb458b2b985155bdbbd23befaacc"
-  integrity sha512-1hLwQfuA39nUDxCTwKqS8l27E9OEzfAdK5xU4Wcr3h2FrQao6qWNnurgWn4GJn9g6tfHuuupyrBl1lvMLNnecw==
+node@^19.6.1:
+  version "19.6.1"
+  resolved "https://registry.yarnpkg.com/node/-/node-19.6.1.tgz#489c22209b09181194e7a34fe20dd60a266f1dcb"
+  integrity sha512-byYg3LxtFgNG0vINZMk4iX3Aa7p8Uc3t3WOQfZMwXcIiCzSTOXNbPOEmbrTSI73yrrfhr6IsutbLnN+/PBSaSA==
   dependencies:
     node-bin-setup "^1.0.0"
 
